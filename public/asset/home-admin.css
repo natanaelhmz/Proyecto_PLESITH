@@ -1,0 +1,642 @@
+/* fondo */
+.main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+    filter: brightness(0.3);
+}
+/*hr de gobierno*/
+.hr-gob{
+    margin: 10px 10px 10px 10px;
+    background-color: var(--gold);
+    border-top: 1px solid var(--gold);
+    opacity: 1;
+}
+.hr-gob::before{
+    content: " ";
+    width: 35px;
+    height: 5px;
+    background-color: var(--wine) !important;
+    display: block;
+    position: absolute;
+}
+
+.tab-pane a{
+    display: flex;
+    justify-content: center; 
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+/* mac */
+@media (min-width: 801px) {
+    /* otros */
+    div.row{
+        width: 100%;
+    }
+    /* col invisible */
+    div.col.invisible{
+        padding: 0%;
+        max-width: 270px;
+        background-color: #691b32;
+    }
+    /* col obscuro */
+    div.col.obscuro{
+        padding: 50px;
+    }
+
+    /* titulos */
+    .main h1{
+        color: #ffffff;
+        font-size: 30px;
+    }
+    h6{
+        font-size: xx-large;
+        color: black;
+        font-weight: bolder;
+    }
+
+    /* home-admin y postulaciones*/
+    /* alto de header*/
+    div.card-header.home-admin{
+        height: auto;
+        min-height: 30px;
+    }
+    /* letra titulos de tablas en postulaciones, bibliotech e infotech */
+    h2.card-title.home-admin, th{
+        font-size:medium;
+        font-weight: bold;
+    }
+    /* letra contenido home-admin, postulaciones, bibliotech e infotech */
+    li, td, a{
+        font-size:medium;
+    }
+     /* alto de tablas en postulaciones, bibliotech e infotech */
+    li.list-group-item, tr{
+        height: auto;
+        min-height: 30px;
+    }
+    /* letra formularios de postulación */
+    p{
+        color: #ffffff;
+        font-size: large;
+    }
+    th.subtitulo1{
+        width: 30%;
+    }
+    th.subtitulo2{
+        width: 20%;
+    }
+    th.subtitulo3{
+        width: 10%;
+    }
+    th.subtitulo4{
+        width: 25%;
+    }
+    th.subtitulo5{
+        width: 15%;
+    }
+
+    /* producciones y nodos */
+    /* titulos de busqueda y subtitulos de formualrios de postulación */
+    label{
+        color: #ffffff;
+        font-size: large;
+        }
+    /* letra subtitulos actualizar bibliotech */
+    label.control-label{
+        color: black;
+    }
+    /* botones de busqueda */
+    button.button.producciones{
+        width: auto;
+        height: auto;
+        width: 100%;
+        margin-top: 30px;
+        border: none;
+    }
+    button.button.nodos{
+        width: auto;
+        height: auto;
+        width: 100%;
+        margin-top: 20px;
+        border: none;
+    }
+    button.btn.btn-success{
+        width: auto;
+        height: auto;
+        width: 100%;
+        border: none;
+    }
+    /* letra en cards */
+    p.card-text{
+        color: black;
+        font-size: medium;
+    }
+    /* resultados de busqueda */
+    div.resultados.producciones, div.resultados.nodos{
+        padding: 60px 0px 0px 0px;
+    }
+    div.card.producciones{
+        margin: 0px 5px 5px 5px;
+        height: auto;
+        max-height: 350px;
+        min-width: 220px;
+    }
+    div.card.nodos{
+        margin: 0px 5px 5px 5px;
+        height: auto;
+        max-height: 500px;
+        min-width: 220px;
+    }
+    div.card-header.producciones, div.card-header.nodos{
+        height: auto;
+        max-height: 60px;
+    }
+    /* titulo card */
+    h5.card-title{
+        font-size: medium;
+        font-weight:bold;
+    }
+    /* modal */
+    .modal-dialog-scrollable .modal-content {
+        height: 300px;
+        width: 600px;
+        left: 25%;
+    }
+    div.modal-header{
+        background-color: #691b32;
+        color: #ffffff;
+    }
+    h4.modal-title{
+        font-size: large;
+    }
+    th.rotated-header, td.contenido-produccion{
+        font-size: medium;
+    }
+
+    /* bibliotech e infotech */
+    /* boton crear */
+    a.btn.btn-primary.crear{
+        margin-bottom: 10px;
+    }
+    /* boton opciones */
+    ul.dropdown-menu.show{
+        height: auto;
+        width: auto;
+        padding: 0px;
+        background: none;
+    }
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+/* ipad */
+@media (min-width: 501px) and (max-width: 800px){
+    /* otros */
+    div.row{
+        width: 100%;
+    }
+    /* col invisible */
+    div.col.invisible{
+        display: none;
+    }
+    /* col obscuro */
+    div.col.obscuro{
+        padding: 45px;
+    }
+
+    /* titulo */
+    .main h1{
+        color: #ffffff;
+        font-size: 25px;
+    }
+    /* letra "no hay registros" */
+    h6{
+        font-size: medium;
+        color: black;
+        font-weight: bolder;
+    }
+
+
+    /* home-admin y postulaciones*/
+    /* alto de header*/
+    div.card-header.home-admin{
+        height: 50px;
+    }
+     /* letra titulos de tablas en postulaciones, bibliotech e infotech */
+    h2.card-title.home-admin, th{
+        font-size: small;
+        font-weight:bold;
+    }
+    /* letra contenido home-admin, postulaciones, bibliotech e infotech*/
+    li{
+        font-size: medium;
+    }
+    td, a{
+        font-size: small;
+    }
+    /* alto de tablas en postulaciones, bibliotech e infotech */
+    li.list-group-item, tr{
+        height: auto;
+    }
+    /* letra formularios de postulación */
+    p{
+        color: #ffffff;
+        font-size: medium;
+    }
+    th.subtitulo1{
+        width: 30%;
+    }
+    th.subtitulo2{
+        width: 20%;
+    }
+    th.subtitulo3{
+        width: 10%;
+    }
+    th.subtitulo4{
+        width: 25%;
+    }
+    th.subtitulo5{
+        width: 15%;
+    }
+
+    /* producciones y nodos */
+    label{
+        color: #ffffff;
+        font-size: small;
+    }
+    /* letra subtitulos actualizar bibliotech */
+    label.control-label{
+        color: black;
+        font-size: medium;
+    }
+     /* botones de busqueda */
+    button.button.producciones{
+        width: auto;
+        height: auto;
+        width: 100%;
+        margin-top: 10px;
+        border: none;
+    }
+    button.button.nodos{
+        width: auto;
+        height: auto;
+        width: 100%;
+        margin-top: 10px;
+        border: none;
+    }
+    button.btn.btn-success{
+        width: auto;
+        height: auto;
+        width: 100%;
+        border: none;
+    }
+    /* letra en cards */
+    p.card-text{
+        color: black;
+        font-size: medium;
+    }
+    /* resultados de busqueda */
+    div.row.resultados.producciones, div.row.resultados.nodos{
+        padding: 40px 0px 0px 0px;
+    }
+    /* cards resultados */
+    div.card.producciones{
+        margin: 0px 10px 10px 10px;
+        max-height: 380px;
+        min-height: 300;
+        width: 220px;
+    }
+    div.card.nodos{
+        margin: 0px 10px 10px 10px;
+        height: auto;
+        min-width: 220px;
+    }
+    div.card-header.producciones, div.card-header.nodos{
+        min-height: 50px;
+        max-height: 70px;
+    }
+    /* titulo card */
+    h5.card-title{
+        font-size: medium;
+        font-weight:bold;
+    }
+    p.card-text{
+        font-size: small;
+        color: black;
+    }
+    /* modal */
+    div.modal-header{
+        background-color: #691b32;
+        color: #ffffff;
+    }
+    h4.modal-title{
+        font-size: medium;
+    }
+    th.rotated-header, td.contenido-produccion{
+        font-size: medium;
+    }
+
+    /* bibliotech e infotech*/
+    /* boton crear */
+    a.btn.btn-primary.crear{
+        margin-bottom: 40px;
+    }
+    /* boton opciones */
+    ul.dropdown-menu.show{
+        height: auto;
+        width: auto;
+        padding: 0px;
+        background: none;
+        border-color: none;
+    }
+    td.docinfotech{
+        max-width: 50px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    td.descinfotech{
+        max-width: 250px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* boton sidebar */
+    button#sidebar-toggle.small-screen-only{
+        height: 50px;
+        width: 50px;
+        border: none;
+        position: absolute;
+        top: 25px;
+        left: 85%;
+        border-radius: 100%;
+        background: #691b32;
+        color: rgb(255, 255, 255);
+    }
+}
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+/* iphone */
+@media (max-width: 500px) {
+    /* otros */
+    div.row{
+        width: 100%;
+    }
+    /* col invisible */
+    div.col.invisible{
+        display: none;
+    }
+    /* col obscuro */
+    div.col.obscuro{
+        padding: 30px 30px 30px 50px;
+    }
+
+    /* titulo */
+    .main h1{
+        color: #ffffff;
+        font-size: 16px;
+    }
+    /* letra "no hay registros" */
+    h6{
+        font-size: small;
+        color: black;
+        font-weight: bolder;
+    }
+
+    /* home-admin */
+    /* alto de header */
+    div.card-header.home-admin{
+        height: auto;
+    }
+    /* letra titulos de tablas en postulaciones, bibliotech e infotech */
+    h2.card-title.home-admin, th{
+        font-size: xx-small;
+        font-weight:bold;
+    }
+    h4{
+        font-size: 10px;
+    }
+    /* letra contenido home-admin, postulaciones, bibliotech e infotech */
+    li{
+        font-size: xx-small;
+    }
+    td, a{
+        font-size: xx-small;
+    }
+    /* alto de tablas en postulaciones, bibliotech e infotech */
+    li.list-group-item, tr{
+        height: auto;
+    }
+     /* letra formularios de postulación */
+    p{
+        color: #ffffff;
+        font-size:small;
+    }
+    th.subtitulo1{
+        width: 25%;
+    }
+    th.subtitulo2{
+        width: 25%;
+    }
+    th.subtitulo4{
+        width: 20%;
+    }
+    th.subtitulo5{
+        width: 20%;
+    }
+    div.modal-body{
+        padding: 12px 0px 0px 0px;
+    }
+
+    /* producciones y nodos */
+    form#busqueda-form{
+        height: auto;
+        width: 100%;
+        min-width: 220px;
+    }
+    label{
+        color: #ffffff;
+        font-size: small;
+    }
+    /* letra subtitulos actualizar bibliotech */
+    label.control-label{
+        color: black;
+        font-size: small;
+    }
+    /* botones de busqueda */
+    button.button.producciones{
+        width: auto;
+        height: auto;
+        width: 100%;
+        margin-top: 30px;
+        border: none;
+    }
+    button.button.nodos{
+        width: auto;
+        height: auto;
+        width: 100%;
+        margin-top: 30px;
+        border: none;
+    }
+    button.btn.btn-success{
+        width: auto;
+        height: auto;
+        width: 100%;
+        border: none;
+    }
+    /* letra en cards */
+    p.card-text{
+        color: black;
+        font-size: small;
+    }
+    /* resultados de busqueda */
+    div.resultados.producciones, div.resultados.nodos{
+        padding: 50px 0px 0px 0px;
+    }
+    /* cards resultados */
+    div.card.producciones{
+        height: auto;
+        max-height: 350px;
+        min-height: 220px;
+        min-width: 220px;
+    }
+    div.card.nodos{
+        height: auto;
+        max-height: 400px;
+        min-height: 220px;
+        min-width: 200px;
+    }
+    div.card-header.producciones, div.card-header.nodos{
+        height: auto;
+    }
+    /* titulo card */
+    h5.card-title{
+        color: black;
+        font-size: small;
+        font-weight:bold;
+    }
+    p.card-text{
+        color: black;
+        font-size: small;
+    }
+    /* modal */
+    .modal-dialog-scrollable .modal-content {
+        max-height: 60%;
+        min-height: 40%;
+        width: 90%;
+    }
+    div.modal-header{
+        background-color: #691b32;
+        color: #ffffff;
+    }
+    h4.modal-title{
+        font-size: small;
+    }
+    th.rotated-header, td.contenido-produccion{
+        font-size: small;
+    }
+    
+    /* bibliotech e infotech */
+    /* boton crear */
+    a.btn.btn-primary.crear{
+        margin-bottom: 20px;
+    }
+    div.card.bibliotech, div.card.infotech{
+        min-width: 220px;
+        height: auto;
+    }
+    /* boton opciones */
+    ul.dropdown-menu.show{
+        height: auto;
+        width: auto;
+        padding: 0px;
+        background: none;
+    }
+    td.docinfotech, td.descbibliotech{
+        max-width: 50px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    td.descinfotech, td.descbibliotech{
+        max-width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    div.button-group{
+        width: 10px;
+        height: 10px;
+    }
+
+    /**/
+  
+    
+    /* boton sidebar */
+    button#sidebar-toggle.small-screen-only{
+        height: 40px;
+        width: 40px;
+        border: none;
+        position: absolute;
+        top: 20px;
+        left: 80%;
+        border-radius: 100%;
+        background: #691b32;
+        color: rgb(255, 255, 255);
+    }
+}
+
+/*Tooltip*/
+.tooltipUNO {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    font-family: "Arial", sans-serif;
+  }
+  
+  .tooltipUNO:hover .tooltiptextUNO {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .tooltiptextUNO {
+    visibility: hidden;
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    top: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltiptextUNO::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #333 transparent;
+  }
+  
+  .tooltipUNO .iconUNO {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #0000007e;
+    color: #ffffff;
+    border-radius: 70%;
+    text-align: center;
+    line-height: 20px;
+  }

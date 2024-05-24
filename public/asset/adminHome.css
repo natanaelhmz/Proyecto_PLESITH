@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #691b32;
+  position: fixed;
+  top: 0;
+  overflow: auto;
+  left: 0; /* Cambiado a 0 para mantener el sidebar siempre visible */
+  transition: left 0.3s ease; /* Agregar transición para suavizar la apertura y cierre */
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+}
+
+.avatar-circle {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.avatar-circle i {
+  color: rgb(20, 20, 20);
+}
+
+.sidebar img {
+  width: 130px;
+  display: block;
+  margin: 10px auto;
+  opacity: .7;
+}
+
+.sidebar ul li {
+  list-style: none;
+  padding: 12px 10px;
+}
+
+.sidebar ul li:hover {
+  background: #a12449;
+  cursor: pointer;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: white;
+  opacity: .7;
+  font-size: 17px;
+  font-family: sans-serif;
+}
+
+button {
+  background: #a12449;
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  border: none;
+  display: block;
+  float: left;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.show {
+  left: 0;
+}
+
+/* Botón solo visible en pantallas pequeñas */
+.small-screen-only {
+  display: none;
+}
+
+/* Media query para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    left: -250px; /* Asegura que el sidebar esté oculto */
+  }
+
+  #sidebar.show {
+    left: 0; /* Muestra el sidebar cuando se añade la clase show */
+  }
+
+  #sidebar-toggle {
+    display: block; /* Muestra el botón en pantallas pequeñas */
+  }
+}
