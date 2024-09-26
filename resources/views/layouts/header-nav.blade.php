@@ -71,7 +71,19 @@
                     @endif
                     @endforeach
                 </li>
+                <li>
+                    @switch(Auth::user()->tipo)
+                    @case('postulado')
+                    @case('revisado')
+                    @if(Auth::user()->datos->count() > 0 && Auth::user()->producciones->count() > 0)
+                        <a href="{{ route('mapa.index') }}"><i class="bi bi-map"></i> Visualizar instituciones</a>
+                    @endif
+                    @break
+                </li>@default
+                <!-- Si no coincide con ninguno de los casos anteriores -->
+                @endswitch
             </ul>
+
         </div>
     </header>
     <!-- Contenido de la página aquí -->

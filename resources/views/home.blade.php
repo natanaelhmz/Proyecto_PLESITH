@@ -20,7 +20,7 @@
 
     @include('layouts/headregob')
     @include('layouts/header-nav')
-    <main style="display: none;" class="page">
+    <main class="page">
         <div class="content">
             <div class="green-box">
 

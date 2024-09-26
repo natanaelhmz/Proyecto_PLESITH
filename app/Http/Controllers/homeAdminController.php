@@ -9,6 +9,7 @@ use App\Models\Producciones;
 use App\Models\Nodo;
 use App\Models\Infotech;
 use App\Models\Bibliotech;
+use App\Models\Reserva;
 
 class homeAdminController extends Controller
 {
@@ -20,6 +21,7 @@ class homeAdminController extends Controller
         $nodoCount = Nodo::count(); // contar el numero de nodos
         $infotechCount = Infotech::count(); // contar el numero en infotech
         $bibliotechCount = Bibliotech::count(); // contar el numero en bibliotech
-        return view('administrador.home-admin', compact('userCount', 'postulacionesCount', 'produccionesCount', 'nodoCount', 'infotechCount', 'bibliotechCount'));
+        $reservasCount = Reserva::count(); // contar el numero de reservas
+        return view('administrador.home-admin', compact('userCount', 'postulacionesCount', 'produccionesCount', 'nodoCount', 'infotechCount', 'bibliotechCount','reservasCount'));
     }
 }

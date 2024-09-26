@@ -32,6 +32,11 @@ class User extends Authenticatable
         'codigo',
     ];
 
+    public function reservas()
+    {
+        return $this->hasMany(Reserva::class, 'user_id');
+    }
+
     public function postulaciones()
     {
         return $this->hasMany(Postulaciones::class, 'user_id');

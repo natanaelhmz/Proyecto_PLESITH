@@ -20,6 +20,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\mensajesController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\ColaboradoresController;
+use App\Http\Controllers\MapaController;
+use App\Http\Controllers\RegistroAdminController;
+use App\Http\Controllers\ReservaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +34,6 @@ use Illuminate\Support\Facades\ColaboradoresController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 
 /*rutas de vistas*/
 Route::get('/', function () {
@@ -88,10 +90,20 @@ Route::get('footer', function(){
     return view('layouts/footer');
 });
 
+// Ruta para cargar el mapa
+// routes/web.php
+Route::get('/mapa', [App\Http\Controllers\mapaController::class, 'index'])->name('mapa.index');
+
+
 // En routes/web.php
 Route::get('/register', [RegisterController::class, 'create'])->name('auth.create');
 Route::post('/store', [RegisterController::class, 'store'])->name('auth.store');
 Route::get('/showFilesById/{id}/files', [RegisterController::class, 'showFilesById'])->name('auth.showFilesById');
+
+// En routes/web.php
+Route::get('/registeradmin', [RegistroAdminController::class, 'create'])->name('auth.create');
+Route::post('/subir', [RegistroAdminController::class, 'store'])->name('auth.astore');
+Route::get('/mostrarFilesById/{id}/files', [RegistroAdminController::class, 'showFilesById'])->name('auth.mostrarFilesById');
 
 //ruta para registrar Informacion PLESITH
 Route::post('EnvioInformacion', [App\Http\Controllers\InformacionController::class,'Insertar']);
@@ -150,6 +162,11 @@ Route::post('/administrador/postulaciones/generar-pdf-aprobado/{PosId}', [TablaC
 //postulacion negada
 Route::get('/administrador/postulaciones/form-negar/{PosId}',[tablaController::class,'FormNegar'])->name ('postulaciones.form-negar')->middleware('soloadmin')->middleware('auth');
 Route::post('/administrador/postulaciones/generar-pdf-negado/{PosId}',[TablaController::class, 'generarPDFnegado'])->name('generarPDFnegado.post')->middleware('soloadmin')->middleware('auth');
+
+
+//reserva aprobada
+Route::get('/administrador/postulaciones/form-aprobarReserva/{ResId}',[tablaController::class,'FormAprobarReserva'])->name('postulaciones.form-aprobarReserva')->middleware('soloadmin')->middleware('auth');
+
 
 
 //ruta nodos
@@ -246,5 +263,14 @@ Route::post('/enviar-solicitud/{nodoId}', [App\Http\Controllers\ListaNodosContro
 Route::post('/aceptar-solicitud/{solicitudId}', 'App\Http\Controllers\ColaboradoresController@aceptarSolicitud')->name('aceptarSolicitud');
 
 
+
+
+
 Route::post('/postulacion/{id}/no-revisado',[App\Http\Controllers\tablaController::class, 'marcarNoRevisado'])->name('postulacion.no_revisado');
 
+Route::get('/mapa', [MapaController::class, 'index'])->name('mapa.index');
+
+
+Route::post('/reservas', [ReservaController::class, 'store'])->name('reservas.store');
+Route::get('/administrador/reservas/aprobar/{id}', [ReservaController::class, 'approveReservation']);
+Route::get('/administrador/reservas/rechazar/{id}', [ReservaController::class, 'rejectReservation']);
